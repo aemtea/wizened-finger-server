@@ -14,7 +14,7 @@ io.on('connection', (socket) => {
     console.log('user disconnected');
   });
 
-  socket.on('chat message', (msg) => {
+  socket.on('messageSent', (msg) => {
     console.log('message: ' + msg.content);
 
     socket.broadcast.emit(`messageReceived:${msg.conversationId}`, msg);
